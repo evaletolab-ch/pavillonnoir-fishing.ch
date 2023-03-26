@@ -1,8 +1,8 @@
 <?php
  return array (
-  'name' => 'landing',
-  'label' => 'Landing',
-  '_id' => 'landing',
+  'name' => 'pages',
+  'label' => 'Pages',
+  '_id' => 'pages',
   'fields' => 
   array (
   ),
