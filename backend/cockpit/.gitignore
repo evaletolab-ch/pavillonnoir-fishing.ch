@@ -1,0 +1,25 @@
+*~
+*.diff
+*.patch
+.DS_Store
+.project
+.settings
+.idea
+.vscode
+.env
+composer.lock
+package-lock.json
+/lib/*
+/storage/tmp
+/storage/cache
+/tests/*
+/node_modules
+#addons/
+!.gitignore
+!.gitkeep
+!/storage/*/*.sqlite
+!/storage/*/.htaccess
+defines.php
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
