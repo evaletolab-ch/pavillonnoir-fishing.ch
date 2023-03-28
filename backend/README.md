@@ -1,10 +1,6 @@
-# Live
-
-* https://bmg-cms.demainlalune.ch/cockpit
 
 # default testing user 
 
-* adm/admin
 
 # install cockpit,
 
