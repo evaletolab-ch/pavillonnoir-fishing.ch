@@ -7,8 +7,8 @@
                         <div class="navigation-bar">
                             <div class="row">
                                 <div class="col-xs-11 text-right">
-                                    <div class="menu m">
-                                        <a href="#"><span class="ion-navicon _ion-android-menu"></span></a>
+                                    <div class="menu m hide">
+                                        <a href="#"><span class="ion-navicon ion-android-menu"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -18,10 +18,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="intro-box">
+                          <img :src="content.intro_logo.path">
+
                             <div class="intro">
                                 <h1>{{content.intro_title}}</h1>
                                 <p>{{content.intro_tagline}}</p>
-                                <a class="btn vira-btn" :href="content.intro_cta_link">{{content.intro_cta_text}}</a>
+                                <a class="btn vira-btn" :href="content.intro_cta_link"> <span class="icon"></span> {{content.intro_cta_text}}</a>
                             </div>
                         </div>
                     </div>
@@ -33,10 +35,10 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
+                            <h2 class="title">Notre passion</h2>                          
                             <p>
-                              {{ content.intro_about }}
+                              {{ content.intro_description }}
                             </p>
-                            <img :src="content.intro_logo.path">
                             <span> </span>
                         </div>
                         
@@ -66,66 +68,65 @@
                 </div>
             </div>
         </div>
+
+
       </div>
     </section> 
+    <div class="photo-container">
+          <div class="photos">
+            <div class="photo" v-for="(photo,index) in content.ourwork_photos" :key="index" @click="event=> currentPhoto = photo.path">
+              <img :src="photo.path" alt="">
+            </div>
+          </div>
+        </div>
 
     <!-- CONTACT -->
     <section id="contact" class="contact section">
                 <div class="container">
-                    <h2 class="title">Contactez nous</h2>
+                    <h2 class="title">{{ content.info_planning_title }}</h2>
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="vira-card">
-                                <div class="vira-card-header">
+                                <div class="vira-card-header hide">
                                         <span class="fa fa-map-o" aria-hidden="true"></span>
                                 </div>
                                 <div class="vira-card-content">
-                                    <h3>Address</h3>
-                                    <p>
-                                        Level 5, 25 pitt st, US
-                                    </p>
+                                    <h3>Le voyage</h3>
+                                    <p v-html="content.info_planning_trip"></p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="vira-card">
-                                <div class="vira-card-header">
+                                <div class="vira-card-header hide">
                                         <span class="fa fa-phone" aria-hidden="true"></span>
                                 </div>
                                 <div class="vira-card-content">
-                                    <h3>Phone</h3>
-                                    <p>
-                                        +555 211 3747
-                                    </p>
+                                    <h3>L'organisation</h3>
+                                    <p v-html="content.info_planning_legal"></p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="vira-card">
-                                <div class="vira-card-header">
+                                <div class="vira-card-header hide">
                                         <span class="fa fa-paper-plane" aria-hidden="true"></span>
                                 </div>
                                 <div class="vira-card-content">
-                                    <h3>Email</h3>
-                                    <p>
-                                        hey@themewagon.com
-                                    </p>
+                                    <h3>Nous contacter</h3>
+                                    <p v-html="content.info_planning_contact"></p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="social-icons">
-                                <ul>
-                                    <a href="#"><li><span class="ion-social-facebook"></span></li></a>
-                                    <a href="#"><li><span class="ion-social-twitter"></span></li></a>
-                                    <a href="#"><li><span class="ion-social-pinterest"></span></li></a>
-                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
+
+    <!-- DRAWER -->            
+    <drawer :open="currentPhoto" @close="currentPhoto=null">
+      <img  class="drawer-photo" :src="currentPhoto" alt="">
+    </drawer>
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -141,9 +142,48 @@
 </template>
 
 <style lang="scss" scoped>
-.work .title{
-  margin-bottom: 50px;
+.work {
+  width: 100%;
+
+  .title{
+    margin-bottom: 50px;
+  }
 }
+
+
+.photo-container {
+    overflow-x: auto;
+    width: 100%;
+    background-color: #eee;
+
+    .photos {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  .photo  {
+    width: 128px;
+    height: 128px;
+    overflow: hidden;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 9px;
+    img{
+      object-fit: cover;
+      width: 128px;
+      height: 128px;          
+    }
+  }
+
+  .drawer-photo{
+    object-fit: cover;
+    width: 100%;
+    border-radius: 14px;
+  }
+
+}
+
+  }
+
 .owl-carousel{
   display: flex;
   .item{
@@ -167,22 +207,45 @@
 .intro a.btn{
     white-space:normal!important;
     letter-spacing: 1px;
-    padding: 15px 40px;
+    padding: 15px 30px;
     background-color: rgba(51, 51, 51,.30);    
+    .icon{
+      background-image: url(/images/pavillonnoir-fishing-whatsapp.png);
+      width: 35px;
+      display: inline-block;
+      height: 34px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin: -11px;
+      margin-right: 5px;
+    }
 }
 
+.intro-box {
+  img {
+    width: 220px;
+    position: absolute;
+    left: calc(50% - 110px);
+    top: 24px;
+    opacity: 0.99;
+  }
+}
 </style>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import Drawer from '@/components/Drawer.vue';
 import { $config, $content } from "@/services";
 
 
 @Component({
   components: {
+    Drawer
   },
 })
 export default class Home extends Vue {
+
+  currentPhoto:string|null=null;
 
   $refs!: {
     intro: HTMLInputElement;

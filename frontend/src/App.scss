@@ -1,6 +1,19 @@
 @import 'https://fonts.googleapis.com/css?family=Lora:400,400i,700|Raleway:300,600,700,900';
 @import 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
 /*Global Settings*/
+
+:root {
+  --md-theme-default-primary:#fff;
+  --md-theme-default-primary-text:#000203;
+  --md-theme-default-secondary:#eee;
+  --md-theme-default-secondary-text:#000203;
+  --md-theme-default-tertiary:#63a1d9;
+  --md-theme-default-tertiary-text:#000203;
+  --md-theme-toolbar-height:40px;
+  --md-theme-max-with:500px;
+}
+
+
 body{
 	font-family: 'Lora', serif;
 }
@@ -47,14 +60,13 @@ section{
 }
 .title:after{
 	content: '';
-	height: 5px;
-	width: 40px;
-	background-color: #62aa94;
-	position: absolute;
-	top: 81px;
-	left: calc(50% - 20px);
 }
 
+.drawer-photo{
+	object-fit: cover;
+	width: 100%;
+	border-radius: 14px;
+}
 
 
 /*Bootstrap*/
@@ -203,8 +215,24 @@ section{
 	left: calc(50% - 22px);
 }
 .vira-card .vira-card-content p{
-	font-size: 15px;
+	font-size: 17px;
+	text-align: left;
 }
+.vira-card .vira-card-content p a {
+	color: #333;
+	padding: 10px 0;
+	display: inline-block;
+	border-bottom: 1px solid #eee;
+	width: 100%;
+}
+
+.vira-card .vira-card-content p a .icon{
+	margin-right: 10px;
+	width: 15px;
+	display: inline-block;
+}
+
+
 .vira-card .vira-card-content .social-icons{
 	margin-top: 30px;
 }
@@ -220,6 +248,7 @@ section{
 	margin-bottom: 30px;
 	background-color: transparent;
 	transition: all 0.3s ease-in-out;
+
 }
 .vira-btn:hover{
 	background-color: #51c2b9;
@@ -354,7 +383,6 @@ section{
 
 /*Home page*/
 .header{
-	background-image: url(/images/1.jpg);
 	height: 100vh;
 	position: relative;
 	min-height: 659px;
@@ -371,29 +399,42 @@ section{
 	vertical-align: middle;
 }
 .header h1{
+	font-size: 40px;
 	margin: 0;
+	margin-bottom: 20px;
 }
 .header h1, .header p{
 	color: #fff;
 	letter-spacing: 2px;
 }
 .header p{
-	font-size: 32px;
+	font-size: 24px;
 	padding-top: 0;
 	padding-bottom: 40px;
 }
 .header .vira-btn{
 	border-color: #fff;
 	color: #fff;
+
+	border-color: #fff;
+	color: #fff;
+	border-radius: 30px;
+	font-size: 17px;	
+
 }
 .header .vira-btn:hover{
-	background-color: #fff;
+	background-color: #fff!important;
 	color: #424242;
+	font-weight: 600;
 }
 
 .about{
 	background-color: #f8f8f8;
 }
+.about p {
+	font-size: 17px;
+}
+
 .about.section {
   padding: 0px 0;
 	margin-top: 10px;
@@ -498,7 +539,7 @@ section{
 
 .contact .vira-card{
 	background-color: #f8f8f8;
-	padding: 35px 0;
+	padding: 35px 10px;
 	transition: all 0.3s ease-in-out;
 	margin-bottom: 45px;
 }
@@ -518,7 +559,7 @@ section{
 	top: 40px;
 }
 .contact .vira-card .vira-card-content p{
-	font-size: 18px;
+	font-size: 17px;
 }
 .footer{
 	background-color: #202020;
