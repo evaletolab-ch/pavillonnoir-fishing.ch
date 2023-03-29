@@ -168,14 +168,14 @@
     cursor: pointer;
     border-radius: 9px;
     img{
-      object-fit: contain;
+      object-fit: cover;
       width: 128px;
       height: 128px;          
     }
   }
 
   .drawer-photo{
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
     border-radius: 14px;
   }
