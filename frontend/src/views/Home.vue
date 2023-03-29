@@ -168,7 +168,7 @@
     cursor: pointer;
     border-radius: 9px;
     img{
-      object-fit: cover;
+      object-fit: contain;
       width: 128px;
       height: 128px;          
     }
