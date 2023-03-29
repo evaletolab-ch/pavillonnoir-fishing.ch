@@ -72,6 +72,8 @@
 
       </div>
     </section> 
+
+    <!-- OUR PHOTOS -->
     <div class="photo-container">
           <div class="photos">
             <div class="photo" v-for="(photo,index) in content.ourwork_photos" :key="index" @click="event=> currentPhoto = photo.path">
