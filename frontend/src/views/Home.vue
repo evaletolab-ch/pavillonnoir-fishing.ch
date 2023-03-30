@@ -36,8 +36,7 @@
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <h2 class="title">Notre passion</h2>                          
-                            <p>
-                              {{ content.intro_description }}
+                            <p v-html="content.intro_description">
                             </p>
                             <span> </span>
                         </div>
@@ -53,7 +52,7 @@
         <div id="workstation-slider" class="owl-carousel">
             <div class="item" v-for="(work,index) in content.ourwork" :key="index">
                 <div class="vira-card">
-                    <div class="vira-card-content">
+                    <div class="vira-card-content hide">
                     </div>
                     <div class="vira-card-header">
                         <img class="img-responsive" :src="work.value.image.path">
@@ -61,8 +60,7 @@
 
                     <div class="vira-card-content">
                       <h3>{{ index+1 }}. {{ work.value.title }}</h3>
-                        <p>
-                          {{ work.value.content }}
+                        <p v-html="work.value.content">
                         </p>
                     </div>
                 </div>
@@ -75,6 +73,7 @@
 
     <!-- OUR PHOTOS -->
     <div class="photo-container">
+          <h2 class="title">La Gallerie photos</h2>
           <div class="photos">
             <div class="photo" v-for="(photo,index) in content.ourwork_photos" :key="index" @click="event=> currentPhoto = photo.path">
               <img :src="photo.path" alt="">
@@ -158,6 +157,9 @@
     width: 100%;
     background-color: #eee;
 
+    .title{
+      text-align: center;
+    }
     .photos {
   display: flex;
   flex-direction: row;
