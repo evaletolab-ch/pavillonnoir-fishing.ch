@@ -7,12 +7,12 @@
   array (
     0 => 
     array (
-      'name' => 'intro_title',
-      'label' => 'Titre',
-      'type' => 'text',
+      'name' => 'intro_logo',
+      'label' => 'Image Logo ',
+      'type' => 'image',
       'default' => '',
       'info' => '',
-      'group' => 'intro',
+      'group' => '1.intro',
       'localize' => false,
       'options' => 
       array (
@@ -26,12 +26,12 @@
     ),
     1 => 
     array (
-      'name' => 'intro_tagline',
-      'label' => 'Singature',
+      'name' => 'intro_title',
+      'label' => 'Titre',
       'type' => 'text',
       'default' => '',
       'info' => '',
-      'group' => 'intro',
+      'group' => '1.intro',
       'localize' => false,
       'options' => 
       array (
@@ -45,12 +45,12 @@
     ),
     2 => 
     array (
-      'name' => 'intro_cta_text',
-      'label' => 'Première Action',
+      'name' => 'intro_tagline',
+      'label' => 'Singature',
       'type' => 'text',
       'default' => '',
       'info' => '',
-      'group' => 'intro',
+      'group' => '1.intro',
       'localize' => false,
       'options' => 
       array (
@@ -64,12 +64,12 @@
     ),
     3 => 
     array (
-      'name' => 'intro_cta_link',
-      'label' => 'Première Action (mail ou téléphone)',
+      'name' => 'introl_description_title',
+      'label' => 'Titre description',
       'type' => 'text',
       'default' => '',
       'info' => '',
-      'group' => 'intro',
+      'group' => '1.intro',
       'localize' => false,
       'options' => 
       array (
@@ -83,12 +83,12 @@
     ),
     4 => 
     array (
-      'name' => 'intro_image',
-      'label' => 'Image principale',
-      'type' => 'image',
+      'name' => 'intro_cta_text',
+      'label' => 'Première Action',
+      'type' => 'text',
       'default' => '',
       'info' => '',
-      'group' => 'intro',
+      'group' => '1.intro',
       'localize' => false,
       'options' => 
       array (
@@ -102,12 +102,12 @@
     ),
     5 => 
     array (
-      'name' => 'intro_logo',
-      'label' => 'Image Logo ',
-      'type' => 'image',
+      'name' => 'intro_cta_link',
+      'label' => 'Première Action (mail ou téléphone)',
+      'type' => 'text',
       'default' => '',
       'info' => '',
-      'group' => 'intro',
+      'group' => '1.intro',
       'localize' => false,
       'options' => 
       array (
@@ -120,6 +120,149 @@
       'required' => true,
     ),
     6 => 
+    array (
+      'name' => 'intro_image',
+      'label' => 'Image principale',
+      'type' => 'image',
+      'default' => '',
+      'info' => '',
+      'group' => '2.Service',
+      'localize' => false,
+      'options' => 
+      array (
+      ),
+      'width' => '1-1',
+      'lst' => true,
+      'acl' => 
+      array (
+      ),
+      'required' => true,
+    ),
+    7 => 
+    array (
+      'name' => 'intro_description',
+      'label' => '',
+      'type' => 'textarea',
+      'default' => '',
+      'info' => '',
+      'group' => '1.intro',
+      'localize' => false,
+      'options' => 
+      array (
+      ),
+      'width' => '1-1',
+      'lst' => true,
+      'acl' => 
+      array (
+      ),
+      'required' => true,
+    ),
+    8 => 
+    array (
+      'name' => 'ourwork_title',
+      'label' => 'Titre de nos services',
+      'type' => 'text',
+      'default' => '',
+      'info' => '',
+      'group' => '2.Service',
+      'localize' => false,
+      'options' => 
+      array (
+      ),
+      'width' => '1-1',
+      'lst' => true,
+      'acl' => 
+      array (
+      ),
+      'required' => true,
+    ),
+    9 => 
+    array (
+      'name' => 'ourwork',
+      'label' => 'Notre offre',
+      'type' => 'repeater',
+      'default' => '',
+      'info' => '',
+      'group' => '2.Service',
+      'localize' => false,
+      'options' => 
+      array (
+        'field' => 
+        array (
+          'type' => 'set',
+          'label' => ' ',
+          'display' => '',
+          'options' => 
+          array (
+            'fields' => 
+            array (
+              0 => 
+              array (
+                'type' => 'text',
+                'name' => 'title',
+                'label' => 'titre',
+                'options' => 
+                array (
+                  'required' => true,
+                ),
+              ),
+              1 => 
+              array (
+                'name' => 'content',
+                'label' => 'description',
+                'type' => 'textarea',
+                'options' => 
+                array (
+                  'required' => true,
+                ),
+              ),
+              2 => 
+              array (
+                'name' => 'image',
+                'label' => 'Photo',
+                'type' => 'image',
+                'options' => 
+                array (
+                  'required' => true,
+                ),
+              ),
+              3 => 
+              array (
+                'name' => 'active',
+                'label' => 'publié',
+                'type' => 'boolean',
+              ),
+            ),
+          ),
+        ),
+      ),
+      'width' => '1-1',
+      'lst' => false,
+      'acl' => 
+      array (
+      ),
+      'required' => true,
+    ),
+    10 => 
+    array (
+      'name' => 'ourwork_photos',
+      'label' => '',
+      'type' => 'gallery',
+      'default' => '',
+      'info' => '',
+      'group' => '2.Service',
+      'localize' => false,
+      'options' => 
+      array (
+      ),
+      'width' => '1-1',
+      'lst' => true,
+      'acl' => 
+      array (
+      ),
+      'required' => false,
+    ),
+    11 => 
     array (
       'name' => 'footer_title',
       'label' => 'Titre du pied de page',
@@ -138,109 +281,86 @@
       ),
       'required' => true,
     ),
-    7 => 
+    12 => 
     array (
-      'name' => 'when',
-      'label' => '',
-      'type' => 'repeater',
+      'name' => 'info_planning_title',
+      'label' => 'Titre',
+      'type' => 'text',
       'default' => '',
       'info' => '',
-      'group' => 'When/Artists',
+      'group' => '3.Infos pratiques',
       'localize' => false,
       'options' => 
       array (
-        'field' => 
-        array (
-          'type' => 'set',
-          'label' => ' ',
-          'display' => 'startDate',
-          'options' => 
-          array (
-            'fields' => 
-            array (
-              0 => 
-              array (
-                'type' => 'collectionlink',
-                'name' => 'localisation',
-                'options' => 
-                array (
-                  'link' => 'localisations',
-                  'display' => 'name',
-                  'multiple' => true,
-                  'limit' => false,
-                  'required' => true,
-                ),
-              ),
-              1 => 
-              array (
-                'name' => 'startDate',
-                'label' => 'Start Date',
-                'type' => 'date',
-                'options' => 
-                array (
-                  'required' => true,
-                ),
-              ),
-              2 => 
-              array (
-                'name' => 'startHour',
-                'label' => 'Start Hour',
-                'type' => 'time',
-                'options' => 
-                array (
-                  'required' => true,
-                ),
-              ),
-              3 => 
-              array (
-                'name' => 'endDate',
-                'label' => 'End Date',
-                'type' => 'date',
-                'options' => 
-                array (
-                  'required' => true,
-                ),
-              ),
-              4 => 
-              array (
-                'name' => 'endHour',
-                'label' => 'End Hour',
-                'type' => 'time',
-                'options' => 
-                array (
-                  'required' => true,
-                ),
-              ),
-              5 => 
-              array (
-                'name' => 'duration',
-                'type' => 'text',
-                'label' => 'Duration',
-                'options' => 
-                array (
-                  'type' => 'number',
-                ),
-              ),
-              6 => 
-              array (
-                'name' => 'cancel',
-                'type' => 'boolean',
-              ),
-            ),
-          ),
-        ),
       ),
       'width' => '1-1',
-      'lst' => false,
+      'lst' => true,
       'acl' => 
       array (
       ),
       'required' => true,
-    ),    
+    ),
+    13 => 
+    array (
+      'name' => 'info_planning_trip',
+      'label' => 'Info pratiques voyage',
+      'type' => 'textarea',
+      'default' => '',
+      'info' => '',
+      'group' => '3.Infos pratiques',
+      'localize' => false,
+      'options' => 
+      array (
+      ),
+      'width' => '1-1',
+      'lst' => true,
+      'acl' => 
+      array (
+      ),
+      'required' => true,
+    ),
+    14 => 
+    array (
+      'name' => 'info_planning_legal',
+      'label' => 'infos pratique légal',
+      'type' => 'textarea',
+      'default' => '',
+      'info' => '',
+      'group' => '3.Infos pratiques',
+      'localize' => false,
+      'options' => 
+      array (
+      ),
+      'width' => '1-1',
+      'lst' => true,
+      'acl' => 
+      array (
+      ),
+      'required' => true,
+    ),
+    15 => 
+    array (
+      'name' => 'info_planning_contact',
+      'label' => 'info pratiques prix',
+      'type' => 'textarea',
+      'default' => '',
+      'info' => '',
+      'group' => '3.Infos pratiques',
+      'localize' => false,
+      'options' => 
+      array (
+      ),
+      'width' => '1-1',
+      'lst' => true,
+      'acl' => 
+      array (
+      ),
+      'required' => false,
+    ),
   ),
   'data' => NULL,
   '_created' => 1679680130,
-  '_modified' => 1679753325,
+  '_modified' => 1680018809,
   'description' => '',
   'acl' => 
   array (
